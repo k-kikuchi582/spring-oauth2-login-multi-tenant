@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Realm | ' + ${realm}">Realm</title>
+</head>
+<body>
+<main>
+    <h1>Home</h1>
+    <p th:text="|This realm is ${realm}!|">Welcome John!</p>
+
+    <ul>
+        <li >
+            <a href="#" th:href="@{/}">戻る</a>
+        </li>
+    </ul>
+</main>
+</body>
+</html>

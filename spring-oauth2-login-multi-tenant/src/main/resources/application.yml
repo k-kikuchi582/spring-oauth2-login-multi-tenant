@@ -1,0 +1,36 @@
+server:
+  port: 3000
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          realm1:
+            client-id: realm1-client
+            client-secret: PdFqUcqqkcTJB269DSVnIzO1gKfNhE7s
+            provider: realm1
+            scope: openid
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+          realm2:
+            client-id: realm2-client
+            client-secret: 4eoXvjLbHPt6kE97bdzUVBFQYODb629d
+            provider: realm2
+            scope: openid
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+        provider:
+          realm1:
+            issuer-uri: http://localhost:8080/realms/realm1
+            authorization-uri: http://localhost:8080/realms/realm1/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/realms/realm1/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/realms/realm1/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/realms/realm1/protocol/openid-connect/certs
+            user-name-attribute:  preferred_username
+          realm2:
+            issuer-uri: http://localhost:8080/realms/realm2
+            authorization-uri: http://localhost:8080/realms/realm2/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/realms/realm2/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/realms/realm2/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/realms/realm2/protocol/openid-connect/certs
+            user-name-attribute:  preferred_username
